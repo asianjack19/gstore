@@ -10,8 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <!-- Styles -->
        
-        {{-- import app.css in resources folder--}}
-        <link rel="stylesheet" href="{{ asset('css/welcome/gstore_welcome.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/gstore/welcome.css') }}">
 
     </head>
     <body>
@@ -21,8 +20,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
+                        <a href="{{ url('/home') }}">Home</a>
                         <a href="{{ route('login') }}">Login</a>
-
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif

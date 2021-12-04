@@ -1,0 +1,10 @@
+#sidebar{
+    margin-right: 2rem;
+    width: 17%;
+    height:max-content;
+    position: fixed;
+    top: 30vh;
+}
+#sidebar img{
+    width:10%;  
+}

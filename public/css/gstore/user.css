@@ -1,0 +1,27 @@
+a:link {
+  text-decoration: none;
+}
+.card{
+    text-align: center;
+    padding-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: min-content;
+    color: whitesmoke;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(10rem);
+}
+.card-title{
+    color: whitesmoke;
+}
+
+.card img{
+  width: 15vw;
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+}

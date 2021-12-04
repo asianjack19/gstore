@@ -72,6 +72,13 @@
   }
 }
 
+html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  max-height: 100% !important;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -83,11 +90,18 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100vh;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 #app
 {
-  height: 100vh;
+  min-height: 90vh;
+  background-color: #191c24;
 }
 
 hr {
@@ -635,8 +649,6 @@ progress {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -3031,32 +3043,35 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background: linear-gradient(139deg, #6717cd, #2d67f4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
+  transition: 0.15s ease-in-out;
 }
 .btn-primary:hover {
+  transform: scale(0.95);
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background: linear-gradient(139deg, #6617cd5e, #2d65f462);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
-  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+  background: linear-gradient(139deg, #6717cd, #2d67f4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
+
 }
 .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0a58ca;
-  border-color: #0a53be;
+  background: linear-gradient(139deg, #6717cd, #2d67f4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
 }
 .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
+  background: linear-gradient(139deg, #6717cd, #2d67f4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
 }
 .btn-primary:disabled, .btn-primary.disabled {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background: linear-gradient(139deg, #6717cd, #2d67f4);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
 }
 
 .btn-secondary {
@@ -4445,7 +4460,7 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.9);
 }
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.55);
+  color: inherit;
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
   color: rgba(0, 0, 0, 0.7);

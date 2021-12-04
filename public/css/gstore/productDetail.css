@@ -1,0 +1,25 @@
+.card{
+    margin-top: 5rem;
+    margin-right: 15vw;
+    text-align: center;
+    padding-bottom: 0.7rem;
+    color: black;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(10rem);
+}
+#productDesc{
+    word-wrap: break-word;
+    max-width: 25rem;
+}
+
+.card img{
+    margin: 1rem;
+    object-fit: contain;
+    border-radius: 0.6rem;
+    width: 15vw !important;
+  }
