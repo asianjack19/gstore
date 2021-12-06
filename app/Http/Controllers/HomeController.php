@@ -15,10 +15,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
+    // Unused for the time being
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -28,6 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         // query count user
+        return view('home');
+    }
+    public function home()
+    {
         $countUser = User::count();
         $countProduct = Product::count();
         $countOrder = Order::count();

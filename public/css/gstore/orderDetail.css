@@ -17,5 +17,5 @@
     margin: 1rem;
     object-fit: contain;
     border-radius: 0.6rem;
-    width: 15vw !important;
-  }
+    max-width: 30vw !important;
+  } 

@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('owner_id')->default(1);
             $table->string('picture')->default('default_product.png');
             $table->string('name');
-            $table->float('price');
+            $table->decimal('price', 19, 4);
             $table->integer('stock');
             $table->longText('description');
             $table->timestamps();

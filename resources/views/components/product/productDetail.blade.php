@@ -1,12 +1,9 @@
-
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/gstore/productDetail.css') }}">
 @endpush
 @extends('layouts.app')
 
-
 @section('content')
-
 <div  iv class="container d-flex justify-content-center flex-wrap">
   @guest
   <div class="card d-flex flex-row">
@@ -52,7 +49,7 @@
         <p class="card-text">Price: Rp{{number_format( $product->price , 0 , '.' , ',' );}},-</p>
         <p class="card-text">Category: {{$product->category_name}}</p>
         <p class="card-text" id="productDesc">{{$product->description}}</p>
-        <a href="{{ url('products/profile/?q='.Crypt::encrypt($product->id)); }}" class="btn btn-primary">Purchase</a>
+        <a href="{{ url('orders/create/?q='.Crypt::encrypt(Auth::user()->id).'&product='.Crypt::encrypt($product->id)); }}" class="btn btn-primary">Purchase</a>
     </div>
     </div>
     @endif    

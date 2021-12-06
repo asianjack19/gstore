@@ -1,6 +1,6 @@
 .card{
-    margin-top: 6rem;
-    margin-right: 10vw;
+    margin-top: 10rem;
+    margin-right: 15vw;
     text-align: center;
     padding-bottom: 0.7rem;
     color: black;
@@ -17,5 +17,5 @@
     margin: 1rem;
     object-fit: contain;
     border-radius: 0.6rem;
-    width: 15vw !important;
+    max-width: 50vw !important;
   }

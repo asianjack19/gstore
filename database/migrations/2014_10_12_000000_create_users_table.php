@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('address');
             $table->string('phone');
-            $table->float('balance')->default(0);
+            $table->decimal('balance', 19, 4)->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

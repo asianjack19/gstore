@@ -19,7 +19,7 @@
               
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('login') || Route::has('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*'))
+                    @if (Route::has('home') ||Route::has('login') || Route::has('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*') || Route::is('*.page') || Route::is('*.create') || Route::is('*.list'))
                             
                     @else
                         <form class="form-inline my-2 my-lg-0">
@@ -40,10 +40,9 @@
                     @endif
                 @else
                 {{-- if route has user.details or product.details --}}
-                    @if (Route::is('*.details')|| Route::is('*.profile') || Route::is('*.edit') || Route::is('*.upload') || Route::is('*.update') || Route::is('categories.*'))
+                    @if (Route::has('home') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.edit') || Route::is('*.upload') || Route::is('*.update')|| Route::is('*.balance')|| Route::is('categories.*')|| Route::is('*.page') || Route::is('*.create') || Route::is('*.list'))
                     
                     @else
-
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
                         <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>

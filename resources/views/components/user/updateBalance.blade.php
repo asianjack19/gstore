@@ -16,7 +16,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="balance" class="col-md-4 col-form-label text-md-right">Current Balance: <br>Rp {{number_format( $user->balance , 0 , '.' , ',' );}},-</label>
-                    <input id="balance" type="number" class="form-control @error('balance') is-invalid @enderror" name="balance" required autocomplete="balance" autofocus>
+                    <input id="balance" type="number" class="form-control @error('balance') is-invalid @enderror" name="balance" min="1" required autocomplete="balance" autofocus>
 
                     @error('title')
                         <span class="invalid-feedback" role="alert">

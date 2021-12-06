@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 // Home Page Endpoint
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
 
 // Users Endpoints
 Route::prefix('users')->group(function () {
@@ -51,4 +51,12 @@ Route::prefix('products')->group(function () {
 //Categories Endpoints
 Route::prefix('categories')->group(function () {
     Route::get('/', 'App\Http\Controllers\CategoryController@getCategories')->name('category.list');
+});
+
+//Orders Endpoints
+Route::prefix('orders')->group(function () {
+    Route::get('/create', 'App\Http\Controllers\OrderController@getOrderPage')->name('order.page')->middleware('auth');
+    Route::post('/create/{id}', 'App\Http\Controllers\OrderController@createOrder')->name('order.create')->middleware('auth');
+    Route::get('/', 'App\Http\Controllers\OrderController@getOrders')->name('order.list')->middleware('auth');
+    Route::get('/details', 'App\Http\Controllers\OrderController@getOrderDetail')->name('order.details')->middleware('auth');
 });

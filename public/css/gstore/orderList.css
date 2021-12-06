@@ -1,0 +1,54 @@
+#folerImg{
+    margin-right: 2rem;
+}
+.card{
+    text-align: center;
+    padding-bottom: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 12rem;
+  }
+  .card-title{
+      color: black;
+  }
+  
+  .card-img-top{
+    max-width: fit-content;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+}
+.list-group {
+    margin-right: 10rem;
+    width: 20rem;
+}
+
+.list-group-item {
+    margin-top: 10px;
+    border-radius: none;
+    background: #5E35B1;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+
+.list-group-item:hover {
+    transform: scaleX(1.1)
+}
+
+.check {
+    opacity: 0;
+    transition: all 0.6s ease-in-out
+}
+
+.list-group-item:hover .check {
+    opacity: 1
+}
+
+.about span {
+    font-size: 12px;
+    margin-right: 10px
+}

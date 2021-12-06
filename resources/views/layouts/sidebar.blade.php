@@ -24,12 +24,16 @@
           Products
         </a>
       </li>
+      @guest
+        
+      @else
       <li>
-        <a href="#" class="nav-link text-primary">
+        <a href="{{url('orders/?q='.Crypt::encrypt(Auth::user()->id))}}" class="nav-link text-primary">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
           Orders
         </a>
       </li>
+      @endguest
       <li>
         <a href="{{url('/categories')}}" class="nav-link text-primary">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
