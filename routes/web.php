@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+if (App::environment('production')) {
+    URL::forceScheme('http');
+}
+
 Auth::routes();
 
 // Main Page Endpoint
