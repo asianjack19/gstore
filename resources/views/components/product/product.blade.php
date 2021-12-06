@@ -8,13 +8,13 @@
 @section('content')
 <h2 class="text-center text-light pt-4">Our Products</h2>
 <div id="buttonUpload">
-    <a class="btn btn-primary"href="/insert">Upload Product</a>
+    <a class="btn btn-primary"href="{{url('/products/upload')}}">Upload Product</a>
 </div>
 <div class="container d-flex justify-content-center" id="mainWrapper">
     <div class="container d-flex flex-wrap justify-content-lg-start">
     @forelse ($products as $product)
     <div class="card mt-5 ">
-        <img class="card-img-top" src="{{asset('storage/'.$product->picture)}}" alt="">
+        <img class="card-img-top" src="{{asset('storage/products/'.$product->picture)}}" alt="">
         <div class="card-body">
             <h3 class="card-title">{{$product->name}}</h3>
             <p class="card-text">By <a href="{{url('/users/details').'?q='.Crypt::encrypt($product->owner_id); }}"><u>{{$product->owner_name}}</u></a></p>
@@ -33,5 +33,7 @@
 
 </div>
 </div>
-
+<div class="container" style="margin-top: 2rem">
+    {{$products->links('pagination::bootstrap-4')}}
+</div>
 @endsection

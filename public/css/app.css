@@ -3045,12 +3045,10 @@ textarea.form-control-lg {
   color: #fff;
   background: linear-gradient(139deg, #6717cd, #2d67f4);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
-  transition: 0.15s ease-in-out;
 }
 .btn-primary:hover {
-  transform: scale(0.95);
   color: #fff;
-  background: linear-gradient(139deg, #6617cd5e, #2d65f462);
+  background: linear-gradient(139deg, #6617cde8, #2d65f4e1);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.055), 0 0 25px #6717cd;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {

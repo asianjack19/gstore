@@ -19,6 +19,14 @@
               
                 <!-- Authentication Links -->
                 @guest
+                    @if (Route::has('login') || Route::has('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*'))
+                            
+                    @else
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    @endif  
                     @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -32,8 +40,8 @@
                     @endif
                 @else
                 {{-- if route has user.details or product.details --}}
-                    @if (Route::is('*.details')|| Route::is('*.profile') )
-                        
+                    @if (Route::is('*.details')|| Route::is('*.profile') || Route::is('*.edit') || Route::is('*.upload') || Route::is('*.update') || Route::is('categories.*'))
+                    
                     @else
 
                     <form class="form-inline my-2 my-lg-0">
@@ -47,15 +55,26 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                            <div>
+                                <a class="dropdown-item" href="{{ url('users/details/?q='.Crypt::encrypt(Auth::user()->id)); }}">Profile Details</a>
+                            </div>
+                            <div>
+                                <a class="dropdown-item" href="{{ url('users/profile/?q='.Crypt::encrypt(Auth::user()->id)); }}">Edit Profile</a>
+                            </div>
+                            <div>
+                                <a class="dropdown-item" href="{{ url('users/topup/?q='.Crypt::encrypt(Auth::user()->id)); }}">Topup Balance</a>
+                            </div>
+                            <div>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+    
+                            </div>
                         </div>
                     </li>
                 @endguest

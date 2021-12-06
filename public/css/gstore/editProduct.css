@@ -27,6 +27,15 @@ a:link {
     margin-bottom: 1rem;
     border-radius: 0.6rem;
   }
+  
+  .range{
+      width: 100%;
+  }
+
+  .form-group{
+        margin-top: 1rem;
+      margin-bottom: 2rem;
+  }
   ::-webkit-file-upload-button {
     border: none;
     border-radius: 0.4rem;
@@ -39,4 +48,3 @@ a:link {
     background-color: #bb2d3b;
     border-color: #b02a37;
   }
-  

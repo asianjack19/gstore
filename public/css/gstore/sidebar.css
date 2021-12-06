@@ -1,9 +1,9 @@
 #sidebar{
     margin-right: 2rem;
     width: 17%;
-    height:max-content;
+    height:90vh;
     position: fixed;
-    top: 30vh;
+    top: 10vh;
 }
 #sidebar img{
     width:10%;  

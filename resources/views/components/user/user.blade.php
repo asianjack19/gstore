@@ -14,7 +14,7 @@
     <div class="card mt-5 d-flex ">
         <a href="{{url('/users/details').'?q='.Crypt::encrypt($user->id); }}">    
         <div class="d-flex justify-content-center">
-            <img class="card-img-top" src="{{asset('storage/'.$user->photo)}}" alt="">
+            <img class="card-img-top" src="{{asset('storage/users/'.$user->photo)}}" alt="">
         </div>
         <div>
           <h3>{{$user->name}}</h3>
@@ -32,5 +32,7 @@
 
 </div>
 </div>
-
+<div class="container" style="margin-top: 2rem">
+    {{$users->links('pagination::bootstrap-4')}}
+</div>
 @endsection

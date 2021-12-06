@@ -30,6 +30,12 @@
           Orders
         </a>
       </li>
+      <li>
+        <a href="{{url('/categories')}}" class="nav-link text-primary">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+          Categories
+        </a>
+      </li>
     </ul>
     <hr>
   </div>
