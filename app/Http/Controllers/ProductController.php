@@ -77,7 +77,7 @@ class ProductController extends Controller
         if ($request->hasFile('picture')) {
             $flag = true;
             $picture = $request->file('picture');
-            $pictureName = $image->getClientOriginalName();
+            $pictureName = $picture->getClientOriginalName();
         } else {
             $picture = asset('storage/products/' . 'default_product.png');
             $pictureName = 'default.png';
