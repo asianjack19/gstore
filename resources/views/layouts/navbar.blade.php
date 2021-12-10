@@ -19,7 +19,7 @@
               
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('home') ||Route::has('login') || Route::has('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*') || Route::is('*.page') || Route::is('*.create') || Route::is('*.list'))
+                    @if (Route::is('home') ||Route::is('login') || Route::is('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*') || Route::is('orders.*'))
                             
                     @else
                         <form class="form-inline my-2 my-lg-0">
@@ -40,7 +40,7 @@
                     @endif
                 @else
                 {{-- if route has user.details or product.details --}}
-                    @if (Route::has('home') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.edit') || Route::is('*.upload') || Route::is('*.update')|| Route::is('*.balance')|| Route::is('categories.*')|| Route::is('*.page') || Route::is('*.create') || Route::is('*.list'))
+                    @if (Route::is('home') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.edit') || Route::is('*.upload') || Route::is('*.update')|| Route::is('*.balance')|| Route::is('category.*')|| Route::is('order.*'))
                     
                     @else
                     <form class="form-inline my-2 my-lg-0">
