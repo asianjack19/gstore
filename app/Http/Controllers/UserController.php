@@ -16,8 +16,8 @@ class UserController extends Controller
     public function getUsers(Request $request)
     {
         if ($request->query('q')) {
-            $users = User::where('name', 'like', '%' . $request->query('q') . '%')
-                ->orWhere('email', 'like', '%' . $request->query('q') . '%')
+            $users = User::whereRaw('LOWER(name) LIKE ?', [trim(strtolower($request->query('q')) . '%')])
+                ->orWhereRaw('LOWER(email) LIKE ?', [trim(strtolower($request->query('q')) . '%')])
                 ->paginate(10);
         } else {
             $users = User::select('id', 'name', 'email', 'photo')

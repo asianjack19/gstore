@@ -18,9 +18,9 @@ class ProductController extends Controller
             $products = Product::join('users', 'users.id', '=', 'products.owner_id')
                 ->join('categories', 'categories.id', '=', 'products.category_id')
                 ->select('products.*', 'categories.name as category_name', 'users.name as owner_name')
-                ->where('products.name', 'LIKE', '%' . request()->q . '%')
-                ->orWhere('categories.name', 'LIKE', '%' . request()->q . '%')
-                ->orWhere('users.name', 'LIKE', '%' . request()->q . '%')
+                ->whereRaw('LOWER(products.name) LIKE ?', [trim(strtolower(request()->q) . '%')])
+                ->orWhereRaw('LOWER(categories.name) LIKE ?', [trim(strtolower(request()->q) . '%')])
+                ->orWhereRaw('LOWER(users.name) LIKE ?', [trim(strtolower(request()->q) . '%')])
                 ->orderBy('products.updated_at', 'desc')
                 ->paginate(10);
         } else {
