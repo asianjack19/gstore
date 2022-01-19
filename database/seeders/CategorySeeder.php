@@ -18,15 +18,15 @@ class CategorySeeder extends Seeder
         //
         DB::table('categories')->insert([
             'id' => 1,
-            'name' => 'Food',
-            'description' => 'Food related items and services for sale in the market.',
+            'name' => 'Books',
+            'description' => 'Books for scholars',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         DB::table('categories')->insert([
             'id' => 2,
-            'name' => 'Beverage',
-            'description' => 'Beverage related items and services for sale in the market.',
+            'name' => 'Stationery',
+            'description' => 'Stationery for students',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -46,15 +46,8 @@ class CategorySeeder extends Seeder
         ]);
         DB::table('categories')->insert([
             'id' => 5,
-            'name' => 'Furniture',
-            'description' => 'Furniture related items and services for sale in the market.',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('categories')->insert([
-            'id' => 6,
-            'name' => 'Others',
-            'description' => 'Other items and services for sale in the market.',
+            'name' => 'Hobbies',
+            'description' => 'Hobbies related items and services for sale in the market.',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

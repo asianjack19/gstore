@@ -19,7 +19,7 @@
               
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::is('home') ||Route::is('login') || Route::is('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('categories.*') || Route::is('orders.*'))
+                    @if (Route::is('home') ||Route::is('login') || Route::is('register') || Route::is('*.details')|| Route::is('*.profile') || Route::is('*.upload') || Route::is('*.edit') || Route::is('*.balance') || Route::is('category.*') || Route::is('orders.*'))
                             
                     @else
                         <form class="form-inline my-2 my-lg-0">
