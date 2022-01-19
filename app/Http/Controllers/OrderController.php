@@ -53,13 +53,18 @@ class OrderController extends Controller
             return Redirect::back();
         }
 
-        $product->stock = $product->stock - $request->quantity;
-        $product->save();
-
         if ($currentUser->balance < $request->quantity * $product->price) {
             Session::flash('message', "balance invalid");
             return Redirect::back();
         }
+
+        $product->stock = $product->stock - $request->quantity;
+        $product->save();
+
+        $receivedUser = User::find($product->owner_id);
+        $receivedUser->balance = $receivedUser->balance + ($request->quantity * $product->price);
+        $receivedUser->save();
+
         $currentUser->balance = $currentUser->balance - ($product->price * $request->quantity);
         $currentUser->save();
 

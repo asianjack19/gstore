@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->float('amount');
+            $table->decimal('amount', 19, 4);
             $table->string('destination');
             $table->timestamps();
         });
